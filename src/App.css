@@ -1,0 +1,8 @@
+.cell{
+    width: 25px;
+    height: 25px;
+}
+.cell-win{
+    background: green;
+    color:white;
+}
