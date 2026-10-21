@@ -16,3 +16,70 @@
     }
   }
 }
+
+/*
+ * Named component classes, composed from Tailwind utilities.
+ * Modifier classes (e.g. .cell--win) are declared after their base class
+ * so they override it.
+ */
+@layer components {
+  /* Layout */
+  .page {
+    @apply flex min-h-screen items-center justify-center bg-slate-50 bg-[radial-gradient(ellipse_at_top,_rgba(99,102,241,0.15),_transparent_60%)] p-4 font-sans text-slate-900 antialiased;
+  }
+
+  .card {
+    @apply w-full max-w-sm rounded-3xl bg-white/80 p-6 shadow-2xl shadow-indigo-200/60 ring-1 ring-slate-200 backdrop-blur-xl sm:p-8;
+  }
+
+  .title {
+    @apply bg-gradient-to-r from-sky-700 via-indigo-700 to-rose-700 bg-clip-text text-center text-3xl font-black tracking-tight text-transparent sm:text-4xl;
+  }
+
+  /* Status pill */
+  .status-pill {
+    @apply rounded-full px-4 py-1.5 text-sm font-semibold ring-1 motion-safe:transition-colors motion-safe:duration-300;
+  }
+  .status-pill--x {
+    @apply bg-sky-100 text-sky-800 ring-sky-300;
+  }
+  .status-pill--o {
+    @apply bg-rose-100 text-rose-800 ring-rose-300;
+  }
+  .status-pill--win {
+    @apply bg-emerald-100 text-emerald-800 ring-emerald-300;
+  }
+  .status-pill--draw {
+    @apply bg-amber-100 text-amber-800 ring-amber-300;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply w-full rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 px-4 py-3 font-semibold text-white shadow-lg shadow-indigo-300/50 hover:from-indigo-700 hover:to-violet-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 motion-safe:transition motion-safe:active:scale-[0.98];
+  }
+
+  /* Board */
+  .board {
+    @apply grid grid-cols-3 gap-3;
+  }
+
+  .cell {
+    @apply flex aspect-square cursor-default items-center justify-center rounded-2xl bg-slate-50 text-5xl font-black shadow-sm ring-1 ring-slate-500 select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 motion-safe:transition motion-safe:duration-200 sm:text-6xl;
+  }
+  .cell--interactive {
+    @apply cursor-pointer hover:bg-white hover:shadow-md hover:ring-slate-700 motion-safe:hover:-translate-y-0.5;
+  }
+  .cell--x {
+    @apply text-sky-700;
+  }
+  .cell--o {
+    @apply text-rose-700;
+  }
+  .cell--win {
+    @apply bg-emerald-100 text-emerald-800 shadow-lg shadow-emerald-200 ring-2 ring-emerald-700 motion-safe:scale-105;
+  }
+
+  .cell-mark {
+    @apply motion-safe:animate-pop;
+  }
+}
